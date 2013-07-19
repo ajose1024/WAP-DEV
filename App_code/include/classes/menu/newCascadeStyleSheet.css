@@ -1,0 +1,17 @@
+/* 
+    Document   : newCascadeStyleSheet
+    Created on : 1/Jan/2003, 4:59:50
+    Author     : Admin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+

@@ -1,0 +1,27 @@
+input[type="text"],input[type=password],textarea{font-family:Arial, Helvetica, sans-serif;color:#fff;font-size:13px;vertical-align:middle;font-weight:normal;padding:6px 5px 8px 10px;margin:0;background:#e2e2d4;border:none;outline:none;width:284px;}
+/* Contact form */
+#contact-form{position:relative; padding:0;}
+	#contact-form fieldset{border:none;padding:0}
+	#contact-form label {display:block;min-height:39px;}
+		#contact-form input{ width:253px;border:1px solid #e3e1d2; background:#a8a998;}
+		#contact-form textarea{height:94px;overflow:auto;width:253px; resize:none;border:1px solid #e3e1d2;background:#a8a998;}
+		#contact-form .message{min-height:110px;}
+.buttons{position:relative; overflow:hidden; padding:11px 1px 0 0; text-align:right;}
+	.buttons span{position:relative; overflow:hidden; margin-left:36px;}
+	.buttons .button{ color:#fff;}
+.success, .error, .empty{display:none; text-align:left;}
+.error, .empty{position:relative; color:red; font-size:11px; top:0px; left:10px;}
+.success, .success strong{ color:#fff;}
+/* Search form */	
+#search{ margin:0; position:relative; width:272px;}
+	#search input{ width:231px;padding:6px 30px 8px 10px; color:#959595;}
+#search .search-button{ position:absolute; display:block; background: url(../images/search.png) 30% 6px no-repeat; width:30px; height:30px; right:0px; bottom:0px;}
+	#search .search-button:hover{ background: url(../images/search.png) 30% -24px no-repeat}
+/* Newsletter-form */
+#newsletter-form fieldset{border:none}
+#newsletter-form label{color:#909090;font-size:12px;display:block;margin-bottom:5px;}
+#newsletter-form input[type=text]{width:202px;margin-right:1px;padding:7px 9px;}
+#newsletter-form a{vertical-align:middle;width:30px;height:30px;display:inline-block;background-color:#000;background-image:url(../images/newsletter.png);background-position:50% 50%;background-repeat:no-repeat;}
+#newsletter-alt-form fieldset{border:none}
+#newsletter-alt-form input[type=text]{width:215px;margin-right:12px;}
+#newsletter-alt-form a{vertical-align:middle;}

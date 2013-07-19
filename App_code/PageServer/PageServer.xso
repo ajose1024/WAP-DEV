@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Page Server test</title>
+  </head>
+
+  <body>
+    <h1>Server variabes</h1>
+    <hr/>
+
+    <table>
+
+      <tr>
+        <td><? print( "HTTP_USER_AGENT" ); ?></td>
+	<td><? print( $_SERVER["HTTP_USER_AGENT"] );      ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "HTTP_ACCEPT" ); ?></td>
+	<td><? print( $_SERVER["HTTP_ACCEPT"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "HTTP_ACCEPT_ENCODING" ); ?></td>
+	<td><? print( $_SERVER["HTTP_ACCEPT_ENCODING"] ); ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "HTTP_ACCEPT_CHARSET" ); ?></td>
+	<td><? print( $_SERVER["HTTP_ACCEPT_CHARSET"] );  ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "HTTP_ACCEPT_LANGUAGE" ); ?></td>
+	<td><? print( $_SERVER["HTTP_ACCEPT_LANGUAGE"] ); ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "HTTP_HOST" ); ?></td>
+	<td><? print( $_SERVER["HTTP_HOST"] );            ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "HTTP_CACHE_CONTROL" ); ?></td>
+	<td><? print( $_SERVER["HTTP_CACHE_CONTROL"] );   ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "PATH" ); ?></td>
+	<td><? print( $_SERVER["PATH"] );                 ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SERVER_SIGNATURE" ); ?></td>
+	<td><? print( $_SERVER["SERVER_SIGNATURE"] );     ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SERVER_SOFTWARE" ); ?></td>
+	<td><? print( $_SERVER["SERVER_SOFTWARE"] );      ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SERVER_NAME" ); ?></td>
+	<td><? print( $_SERVER["SERVER_NAME"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SERVER_ADDR" ); ?></td>
+	<td><? print( $_SERVER["SERVER_ADDR"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SERVER_PORT" ); ?></td>
+	<td><? print( $_SERVER["SERVER_PORT"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "REMOTE_ADDR" ); ?></td>
+	<td><? print( $_SERVER["REMOTE_ADDR"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "DOCUMENT_ROOT" ); ?></td>
+	<td><? print( $_SERVER["DOCUMENT_ROOT"] );        ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SERVER_ADMIN" ); ?></td>
+	<td><? print( $_SERVER["SERVER_ADMIN"] );         ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SCRIPT_FILENAME" ); ?></td>
+	<td><? print( $_SERVER["SCRIPT_FILENAME"] );      ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "REMOTE_PORT" ); ?></td>
+	<td><? print( $_SERVER["REMOTE_PORT"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "GATEWAY_INTERFACE" ); ?></td>
+	<td><? print( $_SERVER["GATEWAY_INTERFACE"] );    ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SERVER_PROTOCOL" ); ?></td>
+	<td><? print( $_SERVER["SERVER_PROTOCOL"] );      ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "REQUEST_METHOD" ); ?></td>
+	<td><? print( $_SERVER["REQUEST_METHOD"] );       ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "QUERY_STRING" ); ?></td>
+	<td><? print( $_SERVER["QUERY_STRING"] );         ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "REQUEST_URI" ); ?></td>
+	<td><? print( $_SERVER["REQUEST_URI"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SCRIPT_NAME" ); ?></td>
+	<td><? print( $_SERVER["SCRIPT_NAME"] );          ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "PATH_INFO" ); ?></td>
+	<td><? print( $_SERVER["PATH_INFO"] );            ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "PATH_TRANSLATED" ); ?></td>
+	<td><? print( $_SERVER["PATH_TRANSLATED"] );      ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "PHP_SELF" ); ?></td>
+	<td><? print( $_SERVER["PHP_SELF"] );             ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "argv" ); ?></td>
+	<td><? print( $_SERVER["argv"] );                 ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "argc" ); ?></td>
+	<td><? print( $_SERVER["argc"] );                 ?></td>
+      </tr>
+
+    </table>
+
+    <hr/>
+
+    <h1>Environment variabes</h1>
+    <hr/>
+    
+    <table>
+      <tr>
+        <td><? print( "LANG" ); ?></td>
+	<td><? print( $_ENV["LANG"] );                    ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "TERM" ); ?></td>
+	<td><? print( $_ENV["TERM"] );                    ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "PATH" ); ?></td>
+	<td><? print( $_ENV["PATH"] );                    ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "PWD" ); ?></td>
+	<td><? print( $_ENV["PWD"] );                     ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "SHLVL" ); ?></td>
+	<td><? print( $_ENV["SHLVL"] );                   ?></td>
+      </tr>
+
+      <tr>
+        <td><? print( "_" ); ?></td>
+	<td><? print( $_ENV["_"] );                       ?></td>
+      </tr>
+
+    </table>
+  </body>
+
+</html>

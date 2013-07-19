@@ -1,0 +1,6 @@
+<LocationMatch "\~anemona-do-mar/App-code/PageServer/*">
+
+  Action page-server /var/www/cgi-bin/anemona-do-mar/PageServer.sho
+  SetHandler page-server
+
+</LocationMatch>

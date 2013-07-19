@@ -1,0 +1,123 @@
+
+/* DNS @ VoipNet WEB site    */
+/* ------------------------- */
+/* Entry level style sheet   */
+
+
+
+body {
+    font-size: 12pt ;
+    color: #FFFFFF ;
+    font-weight: bold ;
+    font-family: arial, helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* ------ */
+/* Header */
+/* ------ */
+
+header
+{
+    
+}
+
+
+#body-wrapper {
+    display: inline-block ;
+}
+
+a {
+    font-size: 100% ;
+    color: #C0C0C0 ;
+    text-decoration: underline ;
+  }
+
+
+a.nodec {
+    font-size: 100% ;
+    color: #FFFFFF ;
+    text-decoration: none;
+  }
+
+
+a.hover {
+    font-size: 100% ;
+    color: #C0C000 ;
+    text-decoration: underline;
+  }
+
+
+h1 {
+    font-size: 24pt ;
+    color: #FFFFFF ;
+    text-decoration: none ;
+    font-family: tahoma, helvetica, sans-serif;
+  }
+
+
+h1, em {
+    font-size: 24pt ;
+    color: #FFFFFF ;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline ;
+    font-family: tahoma, helvetica, sans-serif;
+  }
+
+
+h2 {
+    font-size: 16pt ;
+    color: #FFFFFF ;
+    text-decoration: none ;
+    font-family: tahoma, helvetica, sans-serif;
+  }
+
+
+h2, em {
+    font-size: 16pt ;
+    color: #FFFFFF ;
+    font-style: italic;
+    font-weight: bold;
+    font-family: tahoma, helvetica, sans-serif;
+  }
+
+
+p {
+    font-size: 12pt ;
+    color: #FFFFFF ;
+    font-family: arial, sans-serif;
+  }
+
+
+p, em {
+    font-size: 12pt ;
+    color: #FFFFFF ;
+    font-family: arial, sans-serif ;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+
+.anemona-pic {
+    background : #ffffff;
+  }
+
+
+.menu-item {
+    font-size: 12pt ;
+    color: #FFFFFF ;
+    font-family: arial, sans-serif ;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+
+.separator {
+    width: 30px;
+  }
+

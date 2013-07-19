@@ -1,0 +1,12 @@
+#coin-slider{overflow:hidden;background:url(../images/loader.gif) 50% 50% no-repeat;width:1197px;height:523px;margin:0 auto;}
+.coin-slider{position:relative;margin:0 auto;width:1197px;height:523px;padding-right:1px;}
+.coin-slider a{text-decoration:none;outline:none;border:none}
+.cs-buttons{font-size:0px;position:absolute;line-height:0;top:23px;left:164px; display:block;}
+.cs-buttons a{margin-right:3px;height:21px;width:21px;background:#d9dac5;display:block; float:left;border-radius:12px; }
+.cs-buttons a:hover,.cs-buttons a.cs-active{background:#fd4e15;}
+.cs-prev,.cs-next{ display:none;}
+.bgslider{ width:100%; background:#f9f9fa;position:relative; overflow:hidden; z-index:2;}
+.banner{ width:380px; height:240px; position:absolute; top:190px; left:-400px; display:block !important; z-index:4;}
+.banner .color1{ color:#fd4e15;}
+.text1{ font:52px/63px 'Cabin', sans-serif; color:#1f1b18;font-weight:700; padding-bottom:13px;}
+.text2{ font-size:24px; line-height:30px; color:#201b19; text-transform:uppercase; padding-left:3px;}

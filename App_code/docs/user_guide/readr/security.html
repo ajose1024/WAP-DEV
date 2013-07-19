@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Security Measures : CodeIgniter User Guide</title>
+
+<style type='text/css' media='all'>@import url('../userguide.css');</style>
+<link rel='stylesheet' type='text/css' media='all' href='../userguide.css' />
+
+<script type="text/javascript" src="../nav/nav.js"></script>
+<script type="text/javascript" src="../nav/prototype.lite.js"></script>
+<script type="text/javascript" src="../nav/moo.fx.js"></script>
+<script type="text/javascript" src="../nav/user_guide_menu.js"></script>
+
+<meta http-equiv='expires' content='-1' />
+<meta http-equiv= 'pragma' content='no-cache' />
+<meta name='robots' content='all' />
+<meta name='author' content='ExpressionEngine Dev Team' />
+<meta name='description' content='CodeIgniter User Guide' />
+
+</head>
+<body>
+
+<!-- START NAVIGATION -->
+<div id="nav"><div id="nav_inner"><script type="text/javascript">create_menu('../');</script></div></div>
+<div id="nav2"><a name="top"></a><a href="javascript:void(0);" onclick="myHeight.toggle();"><img src="../images/nav_toggle_darker.jpg" width="154" height="43" border="0" title="Toggle Table of Contents" alt="Toggle Table of Contents" /></a></div>
+<div id="masthead">
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td><h1>CodeIgniter User Guide Version 1.7.2</h1></td>
+<td id="breadcrumb_right"><a href="../toc.html">Table of Contents Page</a></td>
+</tr>
+</table>
+</div>
+<!-- END NAVIGATION -->
+
+
+<!-- START BREADCRUMB -->
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td id="breadcrumb">
+<a href="http://codeigniter.com/">CodeIgniter Home</a> &nbsp;&#8250;&nbsp;
+<a href="../index.html">User Guide Home</a> &nbsp;&#8250;&nbsp;
+Noteworthy Config
+</td>
+<td id="searchbox"><form method="get" action="http://www.google.com/search"><input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />Search User Guide&nbsp; <input type="text" class="input" style="width:200px;" name="q" id="q" size="31" maxlength="255" value="" />&nbsp;<input type="submit" class="submit" name="sa" value="Go" /></form></td>
+</tr>
+</table>
+<!-- END BREADCRUMB -->
+
+<br clear="all" />
+
+
+<!-- START CONTENT -->
+<div id="content">
+
+
+<h1>Preventive Measures</h1>
+
+<p>The following security problems deal with preventing any of our scripts from being worked with or modified in an undesirable way.</p>
+
+<h2>Error Reporting</h2>
+<p>Codeigniter handles error reporting, and has a production mode which we will make use of</p>
+
+<h2>SQL Injections</h2>
+<p>This is once again handled by codeigniter so long as we make use of the built in database class.</p>
+
+<h2>Cross Site Scripting</h2>
+<p>We have enabled codeigniters global XSS filter, but remember to make sure that all untrusted content is handled through CI Methods</p>
+
+<h2>User Input</h2>
+<p>We will always use Post rather than Get, and stick to the CI post method, which contains strict filtering.</p>
+
+<h2>External File Access</h2>
+<p>I have secured against this by making our directories non-traversable through apache &amp; htaccess.</p>
+
+<h2>Remote File Include Attacks</h2>
+<p>Allow_url_fopen has been disabled in php.ini, and we should use cURL as its replacement.</p>
+
+<h2>Session Security</h2>
+<p>First, we should not allow for javascript modification of cookies.</p>
+<code>session.cookie_httponly(true);</code>
+<p>Equally important, we will make sure that session data is stored and encrypted into the database.  This has been handled through CI Config, but be sure and use the session class for session handling.</p>
+<p>Finally, sessions should always be regenerated upon login.</p>
+
+<h2>Cross Site Request Forgery</h2>
+<p>This is not a security vulnerability for us, but rather for our users. Make sure that any vital changes to user data are handled with temporary sessions (flash data), to ensure that they came from our website.</p>
+
+<h2>Directory Traversal</h2>
+<p>We have handled this issue in two ways.  First, Apache does not allow any remote traversal into the system folder.  Second, php files check to see if they have been included from index.php</p>
+
+<h2>PHP Version</h2>
+<p>We will always update to the latest stable php version in a timely matter.</p>
+<br />
+
+<h1>Subsidizing Measures</h1>
+<p>If our preventive measures fail, we can still minimize the damage.</p>
+
+<h2>Variable Initialization</h2>
+<p>Always make sure to initialize a variable before you begin to use it.</p>
+<code>$number = 0;</code>
+
+<h2>Global Variables</h2>
+<p>Global Variables have been turned off and should never be used.</p>
+
+<h2>Magic Quotes</h2>
+<p>Magic Quotes are disabled and should not be used.</p>
+
+<h2>Password Protection</h2>
+<p>All passwords should be hashed using the encryption library's $this->encrypt->password('pw','username').  This is a very secure 512 bit whirlpool hash with a double zipper salt.</p>
+
+<h2>Sensitive Data</h2>
+<p>It is unsure as to whether or not we will be using SSL at this point in time, as we may or may not use credit card information.</p>
+<br />
+
+<h1>Misc Security</h1>
+<p>We are the largest security vulnerability.</p>
+
+<h2>Tiered Access</h2>
+<p>Very few developers will be given access to modify production environments.  Those who are given access are very experienced with computer security and are less likely to have viruses, keyloggers, etc.</p>
+
+<h2>Scripting Language</h2>
+<p>Try not to make it public that we are using codeigniter &amp; php.  expose_php is turned off in PHP.ini, and we are building this from the ground up. There is no reason for anyone to know what language we are using.</p>
+
+<h2>Passwords</h2>
+<p>While not active now, in the future there will be some strict guidelines on passwords.  All developer passwords will need to be changed after a set period of time (such as monthly) and will have to meet certain security requirements.  Likely something to the effect of 8+ characters containing [A-Z][a-z][0-9][!@#$%^&*()_+,.?]</p>
+<br />
+
+<h1>Testing</h1>
+<p>Before every production version, security checks with PHPSecInfo, Spike PHP Security Audit, and PHP Security Scanner should be run.</p>
+<br />
+
+<h1>Suggestions</h1>
+<p>We cannot possibly forsee every security vulnerability, but we can certainly try.  Please bring any possible vulnerability to attention.</p>
+
+</div>
+<!-- END CONTENT -->
+
+
+<div id="footer">
+<p>
+<a href="#top">Top of Page</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+<a href="../index.html">User Guide Home</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+Next Topic:&nbsp;&nbsp;<a href="controllers.html">Controllers</a></p>
+<p><a href="http://codeigniter.com">CodeIgniter</a> &nbsp;&middot;&nbsp; Copyright &#169; 2006-2010 &nbsp;&middot;&nbsp; <a href="http://ellislab.com/">Ellislab, Inc.</a></p>
+</div>
+
+</body>
+</html>
