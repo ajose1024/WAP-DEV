@@ -28,6 +28,7 @@ class WAP_data_interface {
 
 	private $CI ;
         private $path_info ;
+        private $request_uri ;
         private $query_string ;
         private $data_elements = array();
         
@@ -47,6 +48,8 @@ class WAP_data_interface {
         private $query_string_data_array = array() ;
         private $query_string_data_table = array() ;
         
+        private $request_body_data = "" ;
+        
         private $controller_level = 1 ;
 
 
@@ -62,12 +65,39 @@ class WAP_data_interface {
 		$this->CI =& get_instance() ;
 		$this->_data_interface = ( ! function_exists( 'data_interface' ) ) ? FALSE : TRUE ;
 
+                // Get the $_SERVER[ 'REQUEST_URI' ]
+                $this->request_uri = $this->CI->input->server( 'REQUEST_URI' ) ;
+                
                 // Get the $_SERVER[ 'PATH_INFO' ]
-                $this->path_info = $this->CI->input->server( 'REQUEST_URI' ) ;
+                $this->path_info = $this->CI->input->server( 'PATH_INFO' ) ;
+
+                if( $this->path_info === '' )
+                {
+                    // PATH_INFO is not set, so get it through the alternative method
+                    // using REQUEST_URI
+                    if ( strpos( $this->request_uri, '?' ) !== FALSE )
+                    {
+                        $work_data = explode( '?', $this->request_uri ) ;
+                        $this->path_info = $work_data[0] ;
+                    }
+                    else
+                    {
+                        $this->path_info = $this->request_uri ;
+                    }
+                }
+                else
+                {
+                    // PATH_INFO is set, so use it
+                    $this->path_info = $this->path_info ;
+                }
                 
                 // Get the passed 'controller_level' and store it into the private
                 // property $cotroller_level
                 $this->controller_level = $params[ 'controller_level' ] ;
+
+                // Get the REQUEST BODY raw data
+                $request_body_data = file_get_contents( 'php://input' ) ;
+                        
                 
                 $this->query_string = $this->CI->input->server('QUERY_STRING') ;
                 $this->request_method = strtoupper( $this->CI->input->server('REQUEST_METHOD') );
@@ -422,6 +452,26 @@ class WAP_data_interface {
 
         
 	/**
+         * Method:  get_request_body_data( )
+         * 
+	 * Return the data of the REQUEST BODY, when it exists (POST and PUT
+         * HTTP methods) and it has not been consumed and stored in the $_POST
+         * superglobal array
+	 *         * 
+	 * @access	public
+	 * @param	none
+	 * @return	string
+	 */
+        
+	function get_request_body_data( )
+	{
+                return  $this->request_body_data ;
+	}
+
+	// --------------------------------------------------------------------
+
+        
+	/**
          * Method:  get_request_method( )
          * 
 	 * Return the REQUEST_METHOD used in the request
@@ -625,9 +675,11 @@ class WAP_data_interface {
          public function private_data_dump()
          {
              return  array( 'path_info' => $this->path_info ,
+                            'request_uri' => $this->request_uri ,
                             'query_string' => $this->query_string ,
                             'data_elements' => $this->data_elements ,
                             'request_method' => $this->request_method ,
+                            'request_body_data' => $this->request_body_data ,
                             'cookies' => $this->cookies ,
                             'controler' => $this->controler ,
                             'function' => $this->function  ,
