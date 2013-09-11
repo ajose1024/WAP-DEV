@@ -1,0 +1,52 @@
+/* 
+    Document   : full_page_body_abstraction_layer
+    Created on : 6/Set/2013, 0:22:31
+    Author     : gabriel.afonso
+    Description: Full Page Body Abstraction Layer
+
+                    This set of rules are used for clean up any injected and
+                    unwanted HTML and CSS content outside your authoritory
+                    "body" tag
+*/
+
+    /*READ-ONLY*/
+    html>:not(body) ,
+    html>:not(body) * ,
+    html>:not(#The1ndOnlyBodyElement) ,
+    html>:not(#The1ndOnlyBodyElement) * ,
+    #The1ndOnlyHtmlElement>:not(body) ,
+    #The1ndOnlyHtmlElement>:not(body) * ,
+    #The1ndOnlyHtmlElement>:not(#The1ndOnlyBodyElement) ,
+    #The1ndOnlyHtmlElement>:not(#The1ndOnlyBodyElement) * ,
+    body>:not(#bodyAbstractionLayer) ,
+    body>:not(#bodyAbstractionLayer) * ,
+    #The1ndOnlyBodyElement>:not(#bodyAbstractionLayer) ,
+    #The1ndOnlyBodyElement>:not(#bodyAbstractionLayer) * ,
+    #bodyAbstractionLayer>:not(#bodyContentHere)
+    {
+        background: rgba(255,255,255,0) url(//) no-repeat   ! important ;
+        background-size: 0  ! important ;
+        border: rgba(255,255,255,0) 999999999999999em   ! important ;
+        color: rgba(255,255,255,0)  ! important ;
+        display: none   ! important ;
+        height: 0   ! important;
+        opacity: 0  ! important ;
+        width: 0    ! important ;
+    }
+
+    /* This class MUST exclusively be used to define the AUTHORIZED-content
+       canvas size                                                          */
+            
+    #bodyAbstractionLayer
+    {
+        border: 0 ;
+        bottom: 0 ;
+        left: 0 ;
+        margin: 0 ;
+        overflow: hidden ;
+        padding: 0 ;
+        position: fixed ;
+        right: 0 ;
+        top: 0 ;
+    }
+            

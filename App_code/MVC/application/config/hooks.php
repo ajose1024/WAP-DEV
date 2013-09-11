@@ -10,6 +10,19 @@
 |
 */
 
+$hook[ 'pre_controller' ] = array( 'class'      => 'wap_data_init' ,
+                                   'function'   => 'get_CI_objects' ,
+                                   'filename'   => 'wap_data_init.php' ,
+                                   'filepath'   => 'hooks/wap' ,
+                                   'params'     => '' 
+                                 ) ;
+
+$hook[ 'post_controller_constructor' ] = array( 'class'      => 'wap_data_init' ,
+                                                'function'   => 'get_CI_instance' ,
+                                                'filename'   => 'wap_data_init.php' ,
+                                                'filepath'   => 'hooks/wap' ,
+                                                'params'     => '' 
+                                              ) ;
 
 
 /* End of file hooks.php */

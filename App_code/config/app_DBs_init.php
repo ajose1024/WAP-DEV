@@ -29,6 +29,10 @@
     // 'app_databases_init' class
     $GLOBALS[ 'sys_DBs_obj' ] = new app_databases_init ;
 
+    // Initialization of the  WAP_data::$sys_DBs_obj  with the  $GLOBALS[ 'sys_DBs_obj' ]
+    WAP_data::$sys_DBs_obj = $GLOBALS[ 'sys_DBs_obj' ] ;
+    
     // Initialization of all registered databases
-    $GLOBALS[ 'sys_DBs_obj' ]->init_DBs() ;
+    //$GLOBALS[ 'sys_DBs_obj' ]->init_DBs() ;
+    WAP_data::$sys_DBs_obj->init_DBs() ;
 

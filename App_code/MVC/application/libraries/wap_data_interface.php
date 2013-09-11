@@ -146,7 +146,7 @@ class WAP_data_interface {
                         }
                         else
                         {
-                            $work_data = array( "", "" ) ;
+                            $work_data = array( $this->query_string_array[ $i ] , "" ) ;
                         }
                         array_push( $this->query_string_name_array, $work_data[0] ) ;
                         array_push( $this->query_string_data_array, $work_data[1] ) ;
@@ -176,7 +176,7 @@ class WAP_data_interface {
 	 * @return	array
 	 */
         
-	function get_data_elements( )
+	public function get_data_elements( )
 	{
 		return $this->data_elements ;
 	}
@@ -196,7 +196,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_controler_name( )
+	public function get_controler_name( )
 	{
 		return  $this->controler ;
 	}
@@ -216,7 +216,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_controler_function_name( )
+	public function get_controler_function_name( )
 	{
 		return  $this->function ;
 	}
@@ -236,7 +236,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_command_name( )
+	public function get_command_name( )
 	{
 		return  $this->command ;
 	}
@@ -256,7 +256,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_context_token( )
+	public function get_context_token( )
 	{
 		return  $this->context ;
 	}
@@ -276,7 +276,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_data( )
+	public function get_data( )
 	{
 		return $this->data ;
 	}
@@ -296,7 +296,7 @@ class WAP_data_interface {
 	 * @return	array
 	 */
         
-	function get_extra_data( )
+	public function get_extra_data( )
 	{
                 $extra_data_elements = $this->data_elements ;
                 $this->controler  = array_shift( $extra_data_elements ) ;
@@ -323,7 +323,7 @@ class WAP_data_interface {
 	 * @return	array
 	 */
         
-	function get_base_data( )
+	public function get_base_data( )
 	{
                 $this->base_data = array(
                                           $this->data_elements[0],  // Controler
@@ -352,7 +352,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_query_string( )
+	public function get_query_string( )
 	{
                 return  $this->query_string ;
 	}
@@ -372,7 +372,7 @@ class WAP_data_interface {
 	 * @return	integer
 	 */
         
-	function get_query_string_element_count( )
+	public function get_query_string_element_count( )
 	{
                 return  count( $this->query_string_array ) ;
 	}
@@ -395,11 +395,25 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_query_string_element_name( $element_nr )
+	public function get_query_string_element_name( $element_nr )
 	{
-                $element_nr = $element_nr % $this->get_query_string_element_count() ;
+            $element_nr = $element_nr - 1 ;
+            
+            if( $element_nr >= 0 && $element_nr < $this->get_query_string_element_count() )
+            {
+            
+//                var_dump( $element_nr ) ;
+//                var_dump( $this->query_string_name_array ) ;
                 
-                return  $this->query_string_name_array[ $element_nr ] ;
+                if( is_array( $this->query_string_name_array ) )
+                {
+                    if( ! empty( $this->query_string_name_array ) )
+                    {
+                        return  $this->query_string_name_array[ $element_nr ] ;
+                    }
+                }
+            }
+            return  null ;
 	}
 
 	// --------------------------------------------------------------------
@@ -420,11 +434,25 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_query_string_element_data( $element_nr )
+	public function get_query_string_element_data( $element_nr )
 	{
-                $element_nr = $element_nr % $this->get_query_string_element_count() ;
+            $element_nr = $element_nr - 1 ;
+            
+            if( $element_nr >= 0 && $element_nr < $this->get_query_string_element_count() )
+            {
+            
+//                var_dump( $element_nr ) ;
+//                var_dump( $this->query_string_data_array ) ;
                 
-                return  $this->query_string_data_array[ $element_nr ] ;
+                if( is_array( $this->query_string_data_array ) )
+                {
+                    if( ! empty( $this->query_string_data_array ) )
+                    {
+                        return  $this->query_string_data_array[ $element_nr ] ;
+                    }
+                }
+            }
+            return  null ;
 	}
 
 	// --------------------------------------------------------------------
@@ -443,9 +471,16 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_query_string_element_by_name( $element_name )
+	public function get_query_string_element_by_name( $element_name )
 	{
+            if( array_key_exists( $element_name , $this->query_string_data_table ) )
+            {
                 return  $this->query_string_data_table[ $element_name ] ;
+            }
+            else
+            {
+                return  null ;
+            }
 	}
 
 	// --------------------------------------------------------------------
@@ -463,7 +498,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_request_body_data( )
+	public function get_request_body_data( )
 	{
                 return  $this->request_body_data ;
 	}
@@ -484,7 +519,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function get_request_method( )
+	public function get_request_method( )
 	{
                 return  $this->request_method ;
 	}
@@ -505,7 +540,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function is_GET( )
+	public function is_GET( )
 	{
                 if( $this->request_method === "GET" )
                 {
@@ -533,7 +568,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function is_POST( )
+	public function is_POST( )
 	{
                 if( $this->request_method === "POST" )
                 {
@@ -561,7 +596,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function is_PUT( )
+	public function is_PUT( )
 	{
                 if( $this->request_method === "PUT" )
                 {
@@ -589,7 +624,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function is_DELETE( )
+	public function is_DELETE( )
 	{
                 if( $this->request_method === "DELETE" )
                 {
@@ -617,7 +652,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function is_HEAD( )
+	public function is_HEAD( )
 	{
                 if( $this->request_method === "HEAD" )
                 {
@@ -645,7 +680,7 @@ class WAP_data_interface {
 	 * @return	string
 	 */
         
-	function is_OPTIONS( )
+	public function is_OPTIONS( )
 	{
                 if( $this->request_method === "OPTIONS" )
                 {

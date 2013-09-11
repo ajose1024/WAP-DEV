@@ -1,0 +1,251 @@
+/* 
+    Document   : nav_bar
+    Created on : 6/Set/2013, 1:25:07
+    Author     : System Adminstrator
+    Description: Nav Bar (header)
+*/
+
+    #bodyContentHere
+    {
+        background: rgba(255,255,255,.4) ;
+        font-family: serif ;
+        height: 100% ;
+        position: relative ;
+        overflow: auto ;
+        text-align: center ;
+        width: 100% ;
+    }
+            
+    #bodyContentHere::after
+    {
+        background: top no-repeat url( http://www.metalstone.pt/main/resources/background/--unknown--/page_background ) ;
+        background-size: cover ;
+        bottom: 0 ;
+        content: "" ;
+        left: 0 ;
+        position: fixed ;
+        right: 0 ;
+        top: 0 ;
+        z-index: -1 ;
+    }
+
+    #logo::after
+    {
+        background: #fff ;
+        content: "" ;
+        border-bottom: 8px solid #c53 ;
+        height: 82px ;
+        width: 6px ;
+    }
+    
+    #logo>figure>figcaption
+    {
+        display:none ;
+    }
+    
+            #main_navbar>div:first-of-type
+            {
+                height:90px ;
+                position: relative ;
+            }
+            
+            #main_navbar>div:first-of-type>*
+            {
+                display:inline-block;
+                vertical-align:top;
+                height:90px
+            }
+            
+            #main_navbar>ul,
+            #main_navbar>ul>li>ul,
+            #main_navbar>ul>li>ul>li>ul
+            {
+                height:28px;margin:0;padding:0;position:absolute
+            }
+            
+            #main_navbar>ul
+            {
+                background:#fff;
+                border:solid 1px #fed;
+                height:30px;
+                position:static
+            }
+            
+            #main_navbar>ul>li>ul
+            {
+                background:#c50
+            }
+            
+            #main_navbar>ul>li>ul>li>ul
+            {
+                background:#543
+            }
+            
+            #main_navbar>ul>li,
+            #main_navbar>ul>li>ul>li,
+            #main_navbar>ul>li>ul>li>ul>li
+            {
+                display:inline
+            }
+            
+            #main_navbar>ul>li:first-of-type
+            {
+                float:right;margin:0 3px
+            }
+            
+            #main_navbar>ul>li:nth-of-type(2),
+            #main_navbar>ul>li>ul>li:first-of-type,
+            #main_navbar>ul>li>ul>li>ul>li:first-of-type
+            {
+                margin-left:3px
+            }
+            
+            #main_navbar>ul>li a,
+            #main_navbar>ul>li:first-of-type>em
+            {
+                display:inline-block;
+                font-size:16px;
+                line-height:16px;
+                padding:6px;
+                text-decoration:none
+            }
+
+            #main_navbar>ul>li>*
+            {
+                padding:8px
+            }
+            
+            #main_navbar>ul>li>a
+            {
+                color:#543
+            }
+            
+            #main_navbar>ul>li>em
+            {
+                color:#cba
+            }
+            
+            #main_navbar>ul>li>a:active
+            {
+                color:#c50;
+                text-decoration:underline
+            }
+            
+            #main_navbar>ul a:focus,
+            #main_navbar>ul a:hover
+            {
+                text-decoration:underline
+            }
+            
+            #main_navbar>ul>li>a>strong
+            {
+                border-bottom:#c50 solid 4px;
+                color:#c50;
+                font-weight:bold;
+                padding:5px;
+                margin:0 3px
+            }
+            
+            #main_navbar_banner
+            {
+                float:right;font-family:sans-serif
+            }
+            
+            #main_navbar_banner>figure>a
+            {
+                color:#543
+            }
+            
+            #main_navbar_banner>figure>a>img
+            {
+                background:#cba
+            }
+            
+            #main_navbar_banner>figure>figcaption
+            {
+                color:#fff;
+                font-size:12px;
+                font-weight:bold;
+                line-height:12px;
+                margin:5px 0;
+                text-shadow:-1px -1px #000,
+                            -1px 0 #000,
+                            -1px 1px #000,
+                            0 -1px #000,
+                            0 1px #000,
+                            1px -1px #000,
+                            1px 0 #000,
+                            1px 1px #000
+            }
+            
+            #main_navbar>div:first-of-type>#user_auth
+            {
+                display: inline-block ;
+                color: #fff ;
+                font-size: 8px ;
+                font-weight: bold ;
+                line-height: 8px ;
+                margin: 2px 0 ;
+                position: absolute ;
+                top: 0 ;
+                right: 30px ;
+                height: 16px ;
+            }
+            
+            .label_8
+            {
+                font-size: 9px ;
+                font-weight: 900 ;
+                line-height: 9px ;
+                text-shadow:-1px -1px #000,
+                            -1px 0 #000,
+                            -1px 1px #000,
+                            0 -1px #000,
+                            0 1px #000,
+                            1px -1px #000,
+                            1px 0 #000,
+                            1px 1px #000
+            }
+            
+            .text_8
+            {
+                font-size: 14px ;
+                font-weight: 500 ;
+                height: 12px ;
+            }
+            
+            .text_10
+            {
+                font-size: 10px ;
+                font-weight: 900 ;
+                line-height: 10px ;
+            }
+            
+            #main_navbar #background_view
+            {
+                /* background: url( "http://www.metalstone.pt/@pics/eyes.gif" ) ; */
+                position: absolute ;
+                top: 0 ;
+                right: 0;
+                margin: 2px 0px ;
+                height: 16px ;
+                width: 16px ;
+            }
+            
+            #bodyContentHere #main_navbar_page_languages
+            {
+                background:#fff;
+                border-bottom:8px solid #c53;
+                height:82px;
+                width:30px
+            }
+            
+            #main_page
+            {
+                display:inline-block;
+                text-align:left;
+                height:100%;
+                width:960px
+            }
+            
+            

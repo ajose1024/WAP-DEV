@@ -29,6 +29,7 @@ $config['base_url']  =  'http://' . $_SERVER[ 'SERVER_NAME' ] . '/' ;
 */
 // $config['index_page'] = 'index.php';
  $config['index_page'] = '';
+// $config[ 'index_page' ] = WAP_config::Config__index_page ;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,7 +95,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 
 /*
@@ -194,7 +195,7 @@ $config['log_threshold'] = 4;
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '/home/wap-dev/logs/';
+$config['log_path'] = '/home/metalstone-2/logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -280,12 +281,12 @@ $config['p_sess_time_to_update']    = 300;
 |
 */
 $config['cookie_prefix']	= "";
-$config['cookie_domain']	= "dns.voipnet-pt.net";
+$config['cookie_domain']	= "www.metalstone.pt";
 $config['cookie_path']		= "";
 $config['cookie_secure']	= FALSE;
 
 $config['p_cookie_prefix']	= "";
-$config['p_cookie_domain']	= "dns.voipnet-pt.net";
+$config['p_cookie_domain']	= "www.metalstone.pt";
 $config['p_cookie_path']	= "";
 $config['p_cookie_secure']	= FALSE;
 

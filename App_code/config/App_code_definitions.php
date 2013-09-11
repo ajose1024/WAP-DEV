@@ -1,6 +1,8 @@
 <?php  if ( ! defined( 'WAP_EXEC' )) exit( 'No direct script access allowed' ) ;
 
 include( $GLOBALS[ 'DOC_ROOT' ] . '/App_code/include/classes/WAP_base_class.php' ) ;
+include( $GLOBALS[ 'DOC_ROOT' ] . '/App_code/include/classes/WAP_base_data_class.php' ) ;
+include( $GLOBALS[ 'DOC_ROOT' ] . '/App_code/include/classes/WAP_base_data_context_class.php') ;
 
 define( "WAP_USE_ADODB" , TRUE ) ;
 
@@ -23,6 +25,10 @@ define( "WAP_REGISTRY" , FALSE ) ;
 
 define( "WAP_DATABASES" , TRUE ) ;
 
+
+define( "TEMPLATE_BASE_DIR"  , '/templates/Smarty/templates' ) ;
+define( "TEMPLATE_COMP_DIR"  , '/templates/Smarty/compile' ) ;
+define( "TEMPLATE_CACHE_DIR" , '/templates/Smarty/cache' ) ;
 
 define( "RESOURCES_DATA_DIR" , '/App_data/resources' ) ;
 define( "RESOURCES_DATA_IMAGES_DIR" , '/App_data/resources/images' ) ;

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Php_info extends CI_Controller {
+class Php_info extends WAP_Controller {
 
 	/**
 	 * Index Page for this controller.

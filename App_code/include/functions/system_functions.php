@@ -6,6 +6,7 @@
  * 
  *  Functions:  mk_rnd_akey( $length )
  *              within( $val, $min, $max )
+ *              object_to_array( $object )
  */
 
 
@@ -59,3 +60,60 @@
             return  $val ;
         }
     }
+
+    
+    // Function:  object_to_array( $object )
+    //
+    // This function receives a standard object with other nested objects and
+    // converts it all to an array structure with all objects converted to the
+    // correspondent arrays. 
+    
+    function object_to_array( $object )
+    {
+        if( is_object( $object ) )
+        {
+            $object = (array) $object ;
+        }
+
+        if( is_array( $object ) )
+        {
+            $new_object = array() ;
+            
+            foreach( $object as $object_key => $object_val )
+            {
+                $new_object[ $object_key ] = object_to_array( $object_val ) ;
+            }
+        }
+        else
+        {
+            $new_object = $object ;
+        }
+
+        return  $new_object ;       
+    }
+
+    
+    // Function:  delTree( $directory )
+    //
+    // This function receives an absolute path to a directory and recursivelly
+    // deletes all files and directories in it.
+    //
+    // NOTE: ensure $directory ends with a slash 
+    
+    function delTree( $directory )
+    { 
+        $files = glob( $directory . '*', GLOB_MARK ) ; 
+        foreach( $files as $file )
+        { 
+            if( substr( $file, -1 ) == '/' )
+            {
+                delTree( $file ) ;
+            }
+            else
+            {
+                unlink( $file ) ; 
+            }
+        }
+        rmdir( $directory ) ; 
+    }
+    

@@ -39,7 +39,7 @@ class CI_Hooks {
 	 *
 	 * @var array
 	 */
-	var $hooks			= array();
+	var $hooks		= array();
 	/**
 	 * Determines wether hook is in progress, used to prevent infinte loops
 	 *

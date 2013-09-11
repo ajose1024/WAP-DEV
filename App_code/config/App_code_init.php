@@ -61,6 +61,14 @@ if ( WAP_SMARTY_TEMPLATES )
     include (	$GLOBALS[ 'DOC_ROOT' ] .
                 '/App_code/config/Smarty/Smarty.conf.php'
             ) ;
+    
+    include (   $GLOBALS[ 'DOC_ROOT' ] .
+                '/App_code/include/classes/template_views/Element_View.php'
+            ) ;
+    
+    include (   $GLOBALS[ 'DOC_ROOT' ] .
+                '/App_code/include/classes/template_views/Page_Layout_View.php'
+            ) ;
 }
 
 

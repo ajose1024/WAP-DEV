@@ -49,12 +49,18 @@ class Wap_Controller extends CI_Controller
             // to the 'WAP_data_interface' library
             $this->load->library( 'WAP_data_interface', $params ) ;
             
+            // Store the wap_data_interface object in the static public
+            // property  WAP::$data_interface
+            WAP::$data_interface = & $this->wap_data_interface ;
+            
             // Load the 'data_context' model
             $this->load->model( 'data_context' ) ;
             
             // Write to the log
 	    log_message( 'debug', "WAP Controller Class Initialized" ) ;
 
+//            var_dump( $this ) ;
+            
         }
 
 

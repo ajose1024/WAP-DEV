@@ -73,7 +73,7 @@
     }
 
 
-    // Function:  read_JSON_file ( $file_url )
+    // Function:  read_JSON_file ( $file_url , $assoc )
     //
     // This function reads the JSON file passed, returning either the file
     // contents or an error code.
@@ -88,9 +88,9 @@
     //                              in PHP.INI file
     //
 
-    function read_JSON_file ( $file_url )
+    function read_JSON_file ( $file_url , $assoc = false )
     {
-        return json_decode( file_get_contents( $file_url ) ) ;
+        return json_decode( file_get_contents( $file_url , $assoc ) ) ;
     }
 
 
