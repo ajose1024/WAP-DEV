@@ -1,0 +1,122 @@
+/* 
+    Document   : social_menu.html
+    Created on : 1/Ago/2013, 21:42:47
+    Author     : System Adminstrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#linkedin
+{
+    margin-left: 5px ;
+    margin-right: 5px ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+    text-decoration: none ;
+}
+
+#linkedin>img
+{
+    margin: 0px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+}
+
+#facebook
+{
+    margin-left: 5px ;
+    margin-right: 5px ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+    text-decoration: none ;
+}
+
+#facebook>img
+{
+    margin: 0px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+}
+
+#twitter
+{
+    margin-left: 5px ;
+    margin-right: 5px ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+    text-decoration: none ;
+}
+
+#twitter>img
+{
+    margin: 0px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+}
+
+#g_plus
+{
+    margin-left: 5px ;
+    margin-right: 5px ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+    text-decoration: none ;
+}
+
+#g_plus>img
+{
+    margin: 0px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+}
+
+#youtube
+{
+    margin-left: 5px ;
+    margin-right: 5px ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+    text-decoration: none ;
+}
+
+#youtube>img
+{
+    margin: 0px ;
+    width: 32px ;
+    height: 32px ;
+    padding: 0px ;
+    border: #FFFFFF solid 0 ;
+}
+

@@ -1,0 +1,10 @@
+<Directory /users/mp-elearning/public_html/cgi-bin>
+
+  SuexecUserGroup	anemona-do-mar	datanet
+
+  Options +ExecCGI -Indexes
+
+  SetHandler cgi-script .sho .xso .cgi
+
+</Directory>
+

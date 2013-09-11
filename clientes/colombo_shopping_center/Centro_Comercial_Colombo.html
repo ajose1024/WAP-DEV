@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Metalstone</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
+    <script src="/__utm.js" type="text/javascript" language="javascript1.2"></script>
+    <script language="javascript">
+      function addToFavorite(favTitle){
+        if ((navigator.appVersion.indexOf("MSIE") > 0) && (parseInt(navigator.appVersion) >= 4)) {
+          window.external.AddFavorite(location.href, unescape(favTitle));
+        }
+      }
+    </script>
+    <script language="javascript">
+      var back_link_text = "Anterior";
+      var next_link_text = "Pr&oacute;xima";
+      
+      var before_image_nr = 0;
+      var before_min_image_nr = 0;
+      var before_max_image_nr = 0;
+      
+      var before_images_mini = [ ""
+                               ];
+      var before_images = [ "",
+                          ];
+
+      var after_image_nr = 0;
+      var after_min_image_nr = 0;
+      var after_max_image_nr = 8;
+      
+      var after_images_mini = [ "Centro_Comercial_Colombo_1_mini.jpg",
+                                "Centro_Comercial_Colombo_2_mini.jpg",
+                                "Centro_Comercial_Colombo_3_mini.jpg",
+                                "Centro_Comercial_Colombo_4_mini.jpg",
+                                "Centro_Comercial_Colombo_5_mini.jpg",
+                                "Centro_Comercial_Colombo_6_mini.jpg",
+                                "Centro_Comercial_Colombo_7_mini.jpg",
+                                "Centro_Comercial_Colombo_8_mini.jpg",
+                                "Centro_Comercial_Colombo_9_mini.jpg"
+                              ];
+      var after_images = [ "Centro_Comercial_Colombo_1.jpg",
+                           "Centro_Comercial_Colombo_2.jpg",
+                           "Centro_Comercial_Colombo_3.jpg",
+                           "Centro_Comercial_Colombo_4.jpg",
+                           "Centro_Comercial_Colombo_5.jpg",
+                           "Centro_Comercial_Colombo_6.jpg",
+                           "Centro_Comercial_Colombo_7.jpg",
+                           "Centro_Comercial_Colombo_8.jpg",
+                           "Centro_Comercial_Colombo_9.jpg"
+                         ];
+
+      function before_next_img( image_nr )
+      {
+        if ( image_nr < before_max_image_nr ) image_nr++ ;
+        if ( image_nr < before_max_image_nr )
+        {
+            document.getElementById('before_back_link_text').innerHTML = back_link_text ;
+        }
+        else
+        {
+            document.getElementById('before_next_link_text').innerHTML = '' ;
+        }
+        var new_window_mini_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + before_images_mini[ image_nr ] ;
+        var new_window_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + before_images[ image_nr ] ;
+        var onclick_data = 'onclick="window.open(\'' + new_window_url + '\', \'Antes da interven&ccedil;&atilde;o\', \'width=400, height=600, scrollbars=yes\');"';
+        var src_data = 'src="' + new_window_mini_url + '" ' + onclick_data ;
+        document.getElementById('before_img').innerHTML = '<img ' + src_data + onclick_data + '>';
+        document.getElementById('before_image_nr').innerHTML = 'Foto ' + ( image_nr + 1 ) + ' de ' + ( before_max_image_nr + 1 ) ;
+        return image_nr ;
+      }
+      
+      function before_prev_img( image_nr )
+      {
+        if ( image_nr > before_min_image_nr ) image_nr-- ;
+        if ( image_nr > before_min_image_nr )
+        {
+            document.getElementById('before_next_link_text').innerHTML = next_link_text ;
+        }
+        else 
+        {
+            document.getElementById('before_back_link_text').innerHTML = '' ;
+        }
+        var new_window_mini_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + before_images_mini[ image_nr ] ;
+        var new_window_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + before_images[ image_nr ] ;
+        var onclick_data = 'onclick="window.open(\'' + new_window_url + '\', \'Antes da interven&ccedil;&atilde;o\', \'width=400, height=600, scrollbars=yes\');"';
+        var src_data = 'src="' + new_window_mini_url + '" ' + onclick_data ;
+        document.getElementById('before_img').innerHTML = '<img ' + src_data + onclick_data + '>';
+        document.getElementById('before_image_nr').innerHTML = 'Foto ' + ( image_nr + 1 ) + ' de ' + ( before_max_image_nr + 1 ) ;
+        return image_nr ;
+      }
+      
+      function after_next_img( image_nr )
+      {
+        if ( image_nr < after_max_image_nr ) image_nr++ ;
+        if ( image_nr < after_max_image_nr )
+        {
+            document.getElementById('after_back_link_text').innerHTML = back_link_text ;
+        }
+        else
+        {
+            document.getElementById('after_next_link_text').innerHTML = '' ;
+        }
+        var new_window_mini_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + after_images_mini[ image_nr ] ;
+        var new_window_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + after_images[ image_nr ] ;
+        var onclick_data = 'onclick="window.open(\'' + new_window_url + '\', \'Antes da interven&ccedil;&atilde;o\', \'width=400, height=600, scrollbars=yes\');"';
+        var src_data = 'src="' + new_window_mini_url + '" ' + onclick_data ;
+        document.getElementById('after_img').innerHTML = '<img ' + src_data + onclick_data + '>';
+        document.getElementById('after_image_nr').innerHTML = 'Foto ' + ( image_nr + 1 ) + ' de ' + (after_max_image_nr + 1) ;
+        return image_nr ;
+      }
+      
+      function after_prev_img( image_nr )
+      {
+        if ( image_nr > after_min_image_nr ) image_nr-- ;
+        if ( image_nr > after_min_image_nr )
+        {
+            document.getElementById('after_next_link_text').innerHTML = next_link_text ;
+        }
+        else 
+        {
+            document.getElementById('after_back_link_text').innerHTML = '' ;
+        }
+        var new_window_mini_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + after_images_mini[ image_nr ] ;
+        var new_window_url = "http://www.metalstone.pt/clientes/colombo_shopping_center/" + after_images[ image_nr ] ;
+        var onclick_data = 'onclick="window.open(\'' + new_window_url + '\', \'Antes da interven&ccedil;&atilde;o\', \'width=400, height=600, scrollbars=yes\');"';
+        var src_data = 'src="' + new_window_mini_url + '" ' + onclick_data ;
+        document.getElementById('after_img').innerHTML = '<img ' + src_data + onclick_data + '>';
+        document.getElementById('after_image_nr').innerHTML = 'Foto ' + ( image_nr + 1 ) + ' de ' + (after_max_image_nr + 1) ;
+        return image_nr ;
+      }
+      
+    </script>
+  </head>
+
+  <body>
+    <table align="center" cellpadding="0" cellspacing="0" class="header">
+      <tr>
+        <td colspan="2">
+          <img src="/images/1.gif" width="942" height="114" border="0" usemap="#Map" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="/images/3.gif" width="10" height="24"><img src="/images/pt.gif" width="32" height="24" /><img src="/images/uk.gif" width="30" height="24" /><img src="/images/4.gif" width="550" height="24" /><img src="/images/8.gif" width="320" height="24" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="/images/5.gif" width="10" height="35" /><a href="/quemsomos.html"><img src="/images/quem.gif" width="108" height="35" border="0"/></a><a href="/oque.html"><img src="/images/oque.gif" width="121" height="35" border="0"></a><a href="/clientes.html"><img src="/images/clientes.gif" width="90" height="35" border="0" /></a><a href="/links.html"><img src="/images/links.gif" width="70" height="35" border="0" /></a><a href="/contactos.html"><img src="/images/contactos.gif" width="106" height="35" border="0" /></a><img src="/images/menu.gif" width="117" height="35" border="0" /><img src="/images/7.gif" width="320" height="35"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><img src="/images/14.jpg" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><img src="/images/risca2.jpg" width="516" height="19" /><a href="/pedra.html"><img src="/images/pedra.jpg" width="150" height="19" border="0"></a><a href="/metal.html"><img src="/images/metal.jpg" border="0" /></a><a href="/ceramicos.html"><img src="/images/ceramicos.jpg" width="129" height="19" border="0" /></a></td>
+      </tr>
+      <tr>
+        <td colspan="2"><img src="/images/trabalhos_tit.gif " width="950" height="100"></td>
+      </tr>
+    </table>
+
+    <table align="center" cellpadding="0" cellspacing="0" class="tabela">
+      <tr>
+        <td class="img"><a href="http://www.colombo.pt" target="_blank"><img src="Centro_Comercial_Colombo_site_mini.jpg" width="281" height="132" /></a></td>
+        <td class="texto">
+            <h2>Centro Comercial Colombo</h2>
+            <!--a name="antes">
+            <p><strong>Antes do restauro</strong>&nbsp;&nbsp;&nbsp;<span><i>(9 FOTOS)</i></span</p>
+            <table width="400px">
+                <tr>
+                  <td width="7,5%">&nbsp;</td>
+                  <td width="25%"><a href="#antes" onclick="before_image_nr = before_prev_img( before_image_nr );"><span id="before_back_link_text"></span></td></a>
+                  <td width="5%">&nbsp;</td>
+                  <td width="25%"><a href="#antes" onclick=""></a><span id="before_image_nr">Foto 1 de 9</span></td>
+                  <td width="5%">&nbsp;</td>
+                  <td width="25%"><a href="#antes" onclick="before_image_nr = before_next_img( before_image_nr );"><span id="before_next_link_text">Pr&oacute;ximo</span></td></a>
+                  <td width="7,5%">&nbsp;</td>
+                </tr>
+            </table>
+            <span id="before_img"><img src="Centro_Comercial_Colombo_1_mini.jpg" onclick="window.open('http://www.metalstone.pt/clientes/colombo_shopping_center/Centro_Comercial_Colombo_1.jpg', 'Ap&oacute;s a interven&ccedil;&atilde;o', 'width=800, height=600, scrollbars=yes');"></span>
+            <p>&nbsp;</p-->
+            <a name="apos">
+            <p><strong>Ap&oacute;s o restauro</strong>&nbsp;&nbsp;&nbsp;<span><i>(9 FOTOS)</i></span</p>
+            <table width="400px">
+                <tr>
+                  <td width="7,5%">&nbsp;</td>
+                  <td width="25%"><a href="#apos" onclick="after_image_nr = after_prev_img( after_image_nr );"><span id="after_back_link_text"></span></td></a>
+                  <td width="5%">&nbsp;</td>
+                  <td width="25%"><a href="#apos" onclick=""></a><span id="after_image_nr">Foto 1 de 9</span></td>
+                  <td width="5%">&nbsp;</td>
+                  <td width="25%"><a href="#apos" onclick="after_image_nr = after_next_img( after_image_nr );"><span id="after_next_link_text">Pr&oacute;ximo</span></td></a>
+                  <td width="7,5%">&nbsp;</td>
+                </tr>
+            </table>
+            <span id="after_img"><img src="Centro_Comercial_Colombo_1_mini.jpg" onclick="window.open('http://www.metalstone.pt/clientes/colombo_shopping_center/Centro_Comercial_Colombo_1.jpg', 'Ap&oacute;s a interven&ccedil;&atilde;o', 'width=800, height=600, scrollbars=yes');"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="img">&nbsp;</td>
+        <td class="texto">&nbsp;</td>
+      </tr>
+        <tr>
+          <div id="result">&nbsp;</div>
+        </tr>
+    </table>
+    <table align="center" cellpadding="0" cellspacing="0" class="footer">
+      <tr>
+        <td colspan="2"><img src="/images/fundo_2.jpg" /></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="/images/10.jpg" /><a onclick="window.open('http://www.enterweb-form.com/mailingList/form.php?formmembroID=580', 'formulario', 'width=400,height=400,scrollbars=yes');" href="#"><img src="/images/fale.jpg" border="0" /></a><img src="/images/11.jpg" /><img src="/images/adicionar.jpg" border="0" onClick="addToFavorite('Metalstone')"><img src="/images/12.jpg"><a onclick="window.open('http://www.enterweb-form.com/mailingList/form.php?formmembroID=581', 'formulario', 'width=400,height=400,scrollbars=yes');" href="#"><img border="0" src="/images/recomende.jpg" /></a><img src="/images/13.jpg"><a href="http://www.enterweb.pt" target="_blank"><img src="/images/enter.jpg" border="0" /></a> </td>
+      </tr>
+    </table>
+    <map name="Map" id="Map">
+      <area shape="rect" coords="188,59,404,106" href="/index.html" />
+    </map>
+  </body>
+</html>

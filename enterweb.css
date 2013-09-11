@@ -1,0 +1,45 @@
+#middle {
+width: 400px;
+height: 300px;
+top: 30%;
+left: 50%;
+margin-top: -100px;
+margin-left: -200px;
+position: absolute;
+border: 0;
+text-align:center;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+
+#bottom {
+width: 300px;
+height: 70px;
+top: 88%;
+left: 0%;
+position: absolute;
+}
+
+#img.bt { vertical-align: bottom; }
+
+.footer_text{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	color:#333333;
+	font-size:10px;
+}
+
+.footer_text:visited{
+	text-decoration:none;
+	color:#333333;
+}
+
+.footer_text:hover{
+	text-decoration:underline;
+	color:#333333;
+}
+
+.footer_text:active{
+	text-decoration:none;
+	color:#333333;
+}

@@ -1,0 +1,97 @@
+/* 
+    Document   : lang_menu.html
+    Created on : 1/Ago/2013, 5:40:17
+    Author     : System Adminstrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#lang_pt-pt
+{
+    display: inline-block ;
+    margin: 0px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+#lang_pt-pt>a
+{
+    text-decoration: none ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    margin-left: 3px ;
+    margin-right: 3px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+#lang_pt-pt>a>img
+{
+    width: 28px ;
+    height: 18px ;
+    margin: 0px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+#lang_en-us
+{
+    display: inline-block ;
+    margin: 0px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+#lang_en-us>a
+{
+    text-decoration: none ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    margin-left: 3px ;
+    margin-right: 3px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+#lang_en-us>a>img
+{
+    width: 28px ;
+    height: 18px ;
+    margin: 0px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+
+#lang_pt-br
+{
+    display: inline-block ;
+    margin: 0px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+#lang_pt-br>a
+{
+    text-decoration: none ;
+    margin-top: 5px ;
+    margin-bottom: 5px ;
+    margin-left: 3px ;
+    margin-right: 3px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
+#lang_pt-br>a>img
+{
+    width: 28px ;
+    height: 18px ;
+    margin: 0px ;
+    border: #000000 none 0 ;
+    padding: 0px ;
+}
+
